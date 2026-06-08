@@ -1,329 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sajib Md Riyadh Hasan</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;700;800&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        :root {
-            --bg-color: #050505;
-            --card-bg: #0f0f0f;
-            --text-main: #ffffff;
-            --text-muted: #888888;
-            --accent: #3b82f6;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Manrope', 'Noto Sans JP', sans-serif;
-            overflow-x: hidden;
-            margin: 0;
-        }
-
-        /* DOT PATTERN BACKGROUND */
-        .bg-pattern {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(#222 1px, transparent 1px);
-            background-size: 24px 24px;
-            z-index: -1; pointer-events: none;
-        }
-
-        /* TYPOGRAPHY */
-        h1, h2, h3 { letter-spacing: -0.02em; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-
-        /* INTERACTIVE CARDS */
-        .tech-card {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            padding: 1.5rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-            text-decoration: none; /* For links */
-            display: block; /* Make sure links fill the space */
-        }
-        .tech-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            background: #141414;
-        }
-
-        /* TEXT SCRAMBLE HOVER */
-        .scramble-text {
-            cursor: pointer;
-            display: inline-block;
-            white-space: nowrap;
-        }
-        .scramble-text:hover { color: var(--accent); }
-
-        /* BUTTON STYLES */
-        .btn-toggle {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            border: 1px solid #333;
-            padding: 8px 16px;
-            border-radius: 4px;
-            background: transparent;
-            color: #fff;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .btn-toggle:hover { background: #fff; color: #000; }
-
-        /* SCROLLBAR */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg-color); }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Sajib Md Riyadh Hasan — Business Application student in Yokohama with web design, data handling and operations experience." />
+  <title>Sajib Md Riyadh Hasan | Portfolio</title>
+  <style>
+    :root{
+      --bg:#050506;
+      --bg2:#0a0d12;
+      --panel:rgba(255,255,255,.055);
+      --panel2:rgba(255,255,255,.085);
+      --line:rgba(255,255,255,.13);
+      --line2:rgba(255,255,255,.22);
+      --text:#f4f7fb;
+      --muted:#9ba4b3;
+      --soft:#c7d2e2;
+      --blue:#7dd3fc;
+      --violet:#a78bfa;
+      --green:#86efac;
+      --gold:#f7d774;
+      --shadow:0 30px 90px rgba(0,0,0,.42);
+      --radius:28px;
+      --mono:"SFMono-Regular","Cascadia Code","JetBrains Mono",Consolas,monospace;
+      --sans:Inter,"Noto Sans JP",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:var(--sans);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(125,211,252,.18), transparent 28%),
+        radial-gradient(circle at 82% 14%, rgba(167,139,250,.18), transparent 30%),
+        radial-gradient(circle at 52% 88%, rgba(134,239,172,.08), transparent 34%),
+        linear-gradient(180deg,#050506 0%,#080b10 45%,#050506 100%);
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      background-image:radial-gradient(rgba(255,255,255,.16) 1px, transparent 1px);
+      background-size:26px 26px;
+      mask-image:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,.25) 62%,rgba(0,0,0,.72));
+    }
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:-2;
+      background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,.04) 48%,transparent 50%,transparent 100%);
+      background-size:160% 160%;
+      animation:shine 12s ease-in-out infinite;
+    }
+    @keyframes shine{0%,100%{background-position:0% 0%}50%{background-position:100% 100%}}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    .nav{
+      position:fixed;top:0;left:0;right:0;z-index:40;
+      backdrop-filter:blur(20px);
+      background:rgba(5,5,6,.72);
+      border-bottom:1px solid rgba(255,255,255,.08)
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.02em}
+    .mark{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;color:#050506;background:linear-gradient(135deg,#fff,#7dd3fc 55%,#a78bfa);box-shadow:0 0 34px rgba(125,211,252,.28);font-weight:950}
+    .nav-links{display:flex;align-items:center;gap:26px;color:var(--muted);font-size:13px;font-weight:750}
+    .nav-links a:hover{color:#fff}
+    .toggle{border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:10px 14px;font-family:var(--mono);font-size:12px;font-weight:800;cursor:pointer}
+    .toggle:hover{background:#fff;color:#050506}
+    .hero{padding:132px 0 72px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:30px;align-items:stretch}
+    .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);font-weight:800}
+    h1{font-size:clamp(48px,8vw,108px);line-height:.88;letter-spacing:-.075em;margin:18px 0 22px;font-weight:950}
+    .muted{color:var(--muted)}
+    .lead{font-size:clamp(18px,2.1vw,24px);line-height:1.65;color:var(--soft);max-width:780px;margin:0}
+    .lead strong{color:#fff}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:16px;padding:14px 18px;font-size:14px;font-weight:900;transition:.25s ease;border:1px solid var(--line)}
+    .btn.primary{background:#fff;color:#050506;box-shadow:0 18px 60px rgba(255,255,255,.12)}
+    .btn.secondary{background:rgba(255,255,255,.06);color:#fff}
+    .btn:hover{transform:translateY(-3px);border-color:var(--line2)}
+    .btn .ico{font-family:var(--mono);font-weight:900}
+    .terminal{border-radius:var(--radius);background:rgba(4,7,11,.74);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;min-height:100%;position:relative}
+    .terminal::before{content:"";position:absolute;inset:-1px;background:linear-gradient(135deg,rgba(125,211,252,.26),transparent 35%,rgba(167,139,250,.22));opacity:.7;pointer-events:none;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;padding:1px;border-radius:var(--radius)}
+    .term-top{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035)}
+    .lights{display:flex;gap:8px}.lights span{width:10px;height:10px;border-radius:50%;background:#ff5f57}.lights span:nth-child(2){background:#febc2e}.lights span:nth-child(3){background:#28c840}
+    .term-title{font-family:var(--mono);font-size:11px;color:var(--muted)}
+    .term-body{padding:24px}
+    .line{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.065)}
+    .line:last-child{border-bottom:0}.cmd{font-family:var(--mono);font-size:12px;color:var(--green);min-width:120px}.val{color:#f2f6fb;font-weight:760}.val small{display:block;color:var(--muted);font-weight:600;margin-top:3px;line-height:1.45}
+    .status{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(134,239,172,.28);background:rgba(134,239,172,.08);color:#d1fae5;border-radius:999px;padding:8px 10px;font-family:var(--mono);font-size:11px;font-weight:800}.pulse{width:7px;height:7px;background:var(--green);border-radius:99px;box-shadow:0 0 0 0 rgba(134,239,172,.62);animation:pulse 1.8s infinite}@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+    .strip{margin-top:30px;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:24px;overflow:hidden;background:rgba(255,255,255,.045)}
+    .metric{padding:22px;border-right:1px solid var(--line)}.metric:last-child{border-right:0}.metric b{display:block;font-size:26px;letter-spacing:-.04em}.metric span{display:block;margin-top:6px;color:var(--muted);font-size:12px;font-weight:700;line-height:1.35}
+    section{padding:54px 0}.section-head{display:grid;grid-template-columns:.36fr 1fr;gap:30px;align-items:start;margin-bottom:24px}.number{font-family:var(--mono);color:var(--muted);font-size:12px;letter-spacing:.18em}.section-title{font-size:clamp(32px,4vw,58px);line-height:1;letter-spacing:-.055em;font-weight:950;margin:0}.section-note{margin-top:16px;color:var(--muted);line-height:1.75;max-width:720px}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{position:relative;border:1px solid var(--line);background:rgba(255,255,255,.052);border-radius:26px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.18);transition:.25s ease;overflow:hidden}.card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(125,211,252,.12),transparent 38%);opacity:0;transition:.25s ease}.card:hover{transform:translateY(-5px);border-color:rgba(125,211,252,.38);background:rgba(255,255,255,.075)}.card:hover::before{opacity:1}.card>*{position:relative}.eyebrow{font-family:var(--mono);font-size:12px;color:var(--blue);font-weight:900;letter-spacing:.09em}.card h3{font-size:25px;letter-spacing:-.03em;margin:10px 0 10px}.card p{color:var(--muted);line-height:1.72;margin:0}.chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.chip{font-family:var(--mono);font-size:12px;color:#dbeafe;border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:999px;padding:9px 11px}
+    .timeline{border:1px solid var(--line);border-radius:30px;overflow:hidden;background:rgba(255,255,255,.04)}.tl{display:grid;grid-template-columns:190px 1fr;border-bottom:1px solid var(--line)}.tl:last-child{border-bottom:0}.tl-date{font-family:var(--mono);color:var(--blue);font-size:12px;font-weight:900;padding:22px 24px;border-right:1px solid var(--line);background:rgba(255,255,255,.035)}.tl-main{padding:22px 24px}.tl-main h3{margin:0 0 8px;font-size:21px;letter-spacing:-.02em}.tl-main p{margin:0;color:var(--muted);line-height:1.68}
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.skill{border:1px solid var(--line);background:rgba(255,255,255,.052);border-radius:20px;padding:18px;min-height:118px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.skill:hover{transform:translateY(-4px);background:rgba(255,255,255,.08);border-color:rgba(167,139,250,.45)}.skill strong{font-size:16px}.skill span{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:14px;display:block}
+    .project{display:grid;grid-template-columns:1fr 1fr;gap:18px}.project-visual{min-height:320px;border-radius:28px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(125,211,252,.13),rgba(167,139,250,.14)),radial-gradient(circle at 65% 30%,rgba(247,215,116,.12),transparent 38%),rgba(255,255,255,.045);position:relative;overflow:hidden;box-shadow:var(--shadow)}.window{position:absolute;left:34px;right:34px;top:42px;border:1px solid rgba(255,255,255,.16);border-radius:22px;overflow:hidden;background:rgba(6,8,12,.75);box-shadow:0 24px 80px rgba(0,0,0,.34)}.window-top{height:44px;border-bottom:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:8px;padding-left:18px;background:rgba(255,255,255,.05)}.window-top span{width:9px;height:9px;border-radius:50%;background:#ff5f57}.window-top span:nth-child(2){background:#febc2e}.window-top span:nth-child(3){background:#28c840}.window-body{padding:24px}.bar{height:13px;border-radius:99px;background:rgba(255,255,255,.12);margin-bottom:12px}.bar:nth-child(1){width:74%}.bar:nth-child(2){width:56%}.bar:nth-child(3){width:88%}.screen-card{margin-top:20px;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;background:rgba(255,255,255,.06)}
+    .contact-panel{border:1px solid var(--line);border-radius:34px;background:linear-gradient(135deg,rgba(125,211,252,.13),rgba(167,139,250,.1)),rgba(255,255,255,.055);padding:34px;display:flex;align-items:center;justify-content:space-between;gap:22px;box-shadow:var(--shadow)}.contact-panel h2{font-size:clamp(34px,4vw,62px);line-height:1;letter-spacing:-.055em;margin:0}.contact-panel p{color:var(--soft);max-width:600px;line-height:1.7}
+    footer{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);font-family:var(--mono);font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    [data-lang="jp"] .en-only{display:none}[data-lang="en"] .jp-only{display:none}
+    @media(max-width:900px){.nav-links{display:none}.hero-grid,.section-head,.project{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,1fr)}.metric:nth-child(2){border-right:0}.metric:nth-child(1),.metric:nth-child(2){border-bottom:1px solid var(--line)}.cards,.skills{grid-template-columns:1fr}.tl{grid-template-columns:1fr}.tl-date{border-right:0;border-bottom:1px solid var(--line)}.contact-panel{align-items:flex-start;flex-direction:column}.hero{padding-top:118px}}
+    @media(max-width:540px){.wrap{width:min(100% - 28px,1180px)}h1{font-size:50px}.terminal .line{display:block}.cmd{display:block;margin-bottom:8px}.actions{display:grid}.btn{width:100%;justify-content:center}.strip{grid-template-columns:1fr}.metric{border-right:0!important}.metric{border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0}.card{padding:22px}.hero{padding-bottom:44px}.section-title{font-size:36px}.window{left:16px;right:16px}.project-visual{min-height:280px}.foot{display:block}.foot div:last-child{margin-top:12px}}
+    @media print{.nav,.actions,.project-visual{display:none!important}body{background:#fff;color:#111}.card,.terminal,.timeline,.contact-panel,.skill{box-shadow:none;background:#fff;color:#111;border-color:#ddd}.muted,.card p,.tl-main p,.section-note,.contact-panel p{color:#333}.wrap{width:100%;padding:0 22px}.hero{padding-top:30px}}
+  </style>
 </head>
-<body class="antialiased">
+<body data-lang="en">
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Home"><span class="mark">SH</span><span>SAJIB HASAN</span></a>
+      <div class="nav-links">
+        <a href="#about" data-en="About" data-jp="自己紹介">About</a>
+        <a href="#experience" data-en="Experience" data-jp="経験">Experience</a>
+        <a href="#skills" data-en="Skills" data-jp="スキル">Skills</a>
+        <a href="#contact" data-en="Contact" data-jp="連絡先">Contact</a>
+      </div>
+      <button class="toggle" id="langBtn" type="button">日本語</button>
+    </div>
+  </nav>
 
-    <div class="bg-pattern"></div>
-
-    <nav class="fixed top-0 w-full z-50 px-6 py-6 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-[#1a1a1a]">
-        <div class="text-xs font-mono text-gray-500 tracking-widest">SRH_OS_V5.1</div>
-        <div class="flex items-center gap-6">
-            <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                <span class="text-[10px] font-mono text-gray-400 uppercase" id="status-text">Available</span>
-            </div>
-            <button onclick="toggleLanguage()" class="btn-toggle" id="lang-btn">EN / JP</button>
+  <main id="top">
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker" data-en="Portfolio / Business Application / Web Design" data-jp="ポートフォリオ / ビジネスアプリケーション / Webデザイン">Portfolio / Business Application / Web Design</div>
+          <h1>Sajib Md<br>Riyadh Hasan</h1>
+          <p class="lead" data-en="Business Application student in Yokohama with practical web design experience, accurate data handling, and a strong sense of responsibility developed through study and work in Japan." data-jp="横浜でビジネスアプリケーションを学ぶ専門学校生です。Webデザイン経験、正確なデータ処理、そして日本での学業とアルバイトを通して身につけた責任感を強みとしています。">Business Application student in Yokohama with practical web design experience, accurate data handling, and a strong sense of responsibility developed through study and work in Japan.</p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:sajibh2183@gmail.com"><span class="ico">↗</span><span data-en="Contact Me" data-jp="連絡する">Contact Me</span></a>
+            <a class="btn secondary" href="Sajib_Hasan_CV_complete_interview_ready.pdf" target="_blank" rel="noopener"><span class="ico">CV</span><span data-en="View Resume" data-jp="履歴書を見る">View Resume</span></a>
+            <a class="btn secondary" href="https://github.com/spectre9ull" target="_blank" rel="noopener"><span class="ico">GH</span><span>GitHub</span></a>
+          </div>
         </div>
-    </nav>
 
-    <main class="pt-32 pb-20 px-6 md:px-12 max-w-6xl mx-auto">
+        <aside class="terminal" aria-label="Profile summary">
+          <div class="term-top"><div class="lights"><span></span><span></span><span></span></div><div class="term-title">SRH_PROFILE.sys</div></div>
+          <div class="term-body">
+            <div class="status"><span class="pulse"></span><span data-en="Available for interview" data-jp="面接対応可能">Available for interview</span></div>
+            <div class="line"><span class="cmd">LOCATION</span><span class="val">Yokohama, Japan<small>Kanagawa / Nishi-ku</small></span></div>
+            <div class="line"><span class="cmd">EDUCATION</span><span class="val"><span data-en="Azuma Technical College" data-jp="あずま工科専門学校">Azuma Technical College</span><small data-en="Business Application Course" data-jp="ビジネスアプリケーション科">Business Application Course</small></span></div>
+            <div class="line"><span class="cmd">STRENGTH</span><span class="val"><span data-en="Responsibility + Accuracy" data-jp="責任感 + 正確さ">Responsibility + Accuracy</span><small data-en="Clear communication, careful work and continuous learning" data-jp="報告・確認を大切にし、丁寧に学び続けます">Clear communication, careful work and continuous learning</small></span></div>
+            <div class="line"><span class="cmd">LANGUAGE</span><span class="val">Japanese / English / Bengali<small>TOEIC L&amp;R 550</small></span></div>
+          </div>
+        </aside>
+      </div>
 
-        <section class="mb-24">
-            <p class="font-mono text-blue-500 text-xs mb-4">● IDENTITY</p>
-            
-            <h1 class="text-5xl md:text-8xl font-bold leading-tight mb-8">
-                <span class="scramble-text block" id="name-1" data-en="SAJIB MD" data-jp="サジブ・エムディ">SAJIB MD</span>
-                <span class="scramble-text block text-gray-500 hover:text-white transition-colors" id="name-2" data-en="RIYADH HASAN" data-jp="リアド・ハサン">RIYADH HASAN</span>
-            </h1>
+      <div class="strip" aria-label="Highlights">
+        <div class="metric"><b>2021</b><span data-en="Started Web Design" data-jp="Webデザイン開始">Started Web Design</span></div>
+        <div class="metric"><b>550</b><span>TOEIC L&amp;R</span></div>
+        <div class="metric"><b>2027</b><span data-en="Expected Graduation" data-jp="卒業見込み">Expected Graduation</span></div>
+        <div class="metric"><b>JP/EN/BN</b><span data-en="Communication" data-jp="コミュニケーション">Communication</span></div>
+      </div>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-[#1a1a1a] pt-8">
-                <p class="text-lg text-gray-300 leading-relaxed font-light max-w-lg" id="bio-text">
-                    Bridging <strong class="text-white">Hardware Logic</strong> with <strong class="text-white">Business Intelligence</strong>. 
-                    Currently mastering Business Applications at Azuma Technical College.
-                </p>
-                
-                <div class="font-mono text-xs text-gray-500 space-y-2 text-left md:text-right">
-                    <p>LOC: YOKOHAMA, NISHI-KU</p>
-                    <p>DOB: 2003.03.04</p>
-                    <p>EXP: 3+ YEARS</p>
-                </div>
+    <section id="about" class="wrap">
+      <div class="section-head">
+        <div><div class="number">01 / ABOUT</div></div>
+        <div>
+          <h2 class="section-title" data-en="Why Japan became my starting point." data-jp="日本が私のスタート地点になった理由。">Why Japan became my starting point.</h2>
+          <p class="section-note" data-en="Since childhood, I have loved cars. After learning that Japan is globally respected for automobile manufacturing and monozukuri, I wanted to study in Japan. I am now building my foundation in Business Applications and IT." data-jp="子どもの頃から車が好きで、日本の自動車づくりやものづくりが世界的に高く評価されていることを知り、日本で学びたいと思いました。現在はビジネスアプリケーションとITの基礎を学んでいます。">Since childhood, I have loved cars. After learning that Japan is globally respected for automobile manufacturing and monozukuri, I wanted to study in Japan. I am now building my foundation in Business Applications and IT.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="wrap">
+      <div class="section-head">
+        <div><div class="number">02 / EXPERIENCE</div></div>
+        <div>
+          <h2 class="section-title" data-en="Experience that connects design, accuracy and teamwork." data-jp="デザイン・正確さ・チームワークにつながる経験。">Experience that connects design, accuracy and teamwork.</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl">
+          <div class="tl-date">2021 — 2022</div>
+          <div class="tl-main">
+            <h3 data-en="Web Designer / Fiverr" data-jp="Webデザイナー / Fiverr">Web Designer / Fiverr</h3>
+            <p data-en="Created websites while confirming client needs. This helped me build practical web design skills and the habit of understanding requirements before starting work." data-jp="海外クライアントの希望を確認しながらサイト制作を行いました。Webデザインの基礎だけでなく、作業前に相手のニーズを理解する姿勢を身につけました。">Created websites while confirming client needs. This helped me build practical web design skills and the habit of understanding requirements before starting work.</p>
+          </div>
+        </div>
+        <div class="tl">
+          <div class="tl-date">2023 — 2024</div>
+          <div class="tl-main">
+            <h3 data-en="Part-time Staff / Kura Sushi" data-jp="アルバイト / くら寿司">Part-time Staff / Kura Sushi</h3>
+            <p data-en="Gained experience in a Japanese workplace and learned the importance of speed, teamwork and careful customer-facing work." data-jp="日本の職場で働く経験を通して、スピード、チームワーク、丁寧な対応の大切さを学びました。">Gained experience in a Japanese workplace and learned the importance of speed, teamwork and careful customer-facing work.</p>
+          </div>
+        </div>
+        <div class="tl">
+          <div class="tl-date">2023 — Present</div>
+          <div class="tl-main">
+            <h3 data-en="Sorting Operations / 7-Eleven Yokohama" data-jp="仕分け業務 / セブン-イレブン横浜">Sorting Operations / 7-Eleven Yokohama</h3>
+            <p data-en="Continued working while studying. Through sorting and daily operations, I developed time management, accuracy, responsibility and steady communication." data-jp="学業とアルバイトを両立しながら、仕分け業務を通して時間管理、正確な作業、責任感、報告・確認の大切さを学びました。">Continued working while studying. Through sorting and daily operations, I developed time management, accuracy, responsibility and steady communication.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="wrap">
+      <div class="section-head">
+        <div><div class="number">03 / SKILLS</div></div>
+        <div>
+          <h2 class="section-title" data-en="Simple skills, explained clearly." data-jp="面接で説明しやすいスキル。">Simple skills, explained clearly.</h2>
+          <p class="section-note" data-en="The portfolio is intentionally aligned with my CV, so every point can be explained naturally during an interview." data-jp="履歴書の内容と合わせているため、面接でも自然に説明できます。">The portfolio is intentionally aligned with my CV, so every point can be explained naturally during an interview.</p>
+        </div>
+      </div>
+
+      <div class="skills">
+        <div class="skill"><strong data-en="Web Design" data-jp="Webデザイン">Web Design</strong><span>HTML / CSS / Layout</span></div>
+        <div class="skill"><strong data-en="PC Operations" data-jp="基本的なPC操作">PC Operations</strong><span>Office / Documents</span></div>
+        <div class="skill"><strong data-en="Data Entry" data-jp="データ入力・整理">Data Entry</strong><span>Accuracy / Checking</span></div>
+        <div class="skill"><strong data-en="Information Processing" data-jp="情報処理">Information Processing</strong><span>Organize / Report</span></div>
+        <div class="skill"><strong data-en="Communication" data-jp="コミュニケーション">Communication</strong><span>JP / EN / BN</span></div>
+        <div class="skill"><strong data-en="Teamwork" data-jp="チームワーク">Teamwork</strong><span>Workplace Experience</span></div>
+        <div class="skill"><strong data-en="Responsibility" data-jp="責任感">Responsibility</strong><span>Study + Work</span></div>
+        <div class="skill"><strong data-en="Photography" data-jp="写真撮影">Photography</strong><span>Observation / Detail</span></div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><div class="number">04 / PROJECT</div></div>
+        <div>
+          <h2 class="section-title" data-en="A practical digital presence." data-jp="実践的なデジタル制作。">A practical digital presence.</h2>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-visual" aria-hidden="true">
+          <div class="window">
+            <div class="window-top"><span></span><span></span><span></span></div>
+            <div class="window-body">
+              <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+              <div class="screen-card">
+                <div class="eyebrow">NISHI KABBO BAKES</div>
+                <h3 style="margin:10px 0 6px;letter-spacing:-.03em">Brand Website</h3>
+                <p style="color:var(--muted);line-height:1.6;margin:0">Design / Structure / Online Presence</p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+        <div class="card">
+          <div class="eyebrow" data-en="Featured Work" data-jp="制作例">Featured Work</div>
+          <h3>Nishi Kabbo Bakes</h3>
+          <p data-en="A small business web presence built with clear sections, brand presentation, and mobile-friendly layout. It shows my interest in practical web design and digital branding." data-jp="小規模ビジネス向けのWebプレゼンスとして、分かりやすい構成、ブランド紹介、スマートフォン対応を意識して制作しました。実践的なWebデザインとデジタルブランディングへの関心を表しています。">A small business web presence built with clear sections, brand presentation, and mobile-friendly layout. It shows my interest in practical web design and digital branding.</p>
+          <div class="chip-row"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Responsive</span><span class="chip">Branding</span></div>
+          <div class="actions">
+            <a class="btn secondary" href="https://spectre9ull.github.io/nishikabyobakes/" target="_blank" rel="noopener"><span class="ico">↗</span><span data-en="Open Project" data-jp="開く">Open Project</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="mb-20">
-            <div class="flex items-center gap-4 mb-8">
-                <span class="font-mono text-xs text-gray-500">01</span>
-                <h2 class="text-sm font-mono text-gray-500 uppercase tracking-widest" id="edu-title">Education History</h2>
-                <div class="h-px bg-[#1a1a1a] flex-grow"></div>
-            </div>
+    <section id="contact" class="wrap">
+      <div class="contact-panel">
+        <div>
+          <div class="kicker" data-en="Contact" data-jp="連絡先">Contact</div>
+          <h2 data-en="Let’s work together." data-jp="よろしくお願いいたします。">Let’s work together.</h2>
+          <p data-en="I am ready to learn sincerely, confirm unclear points, and contribute with responsibility and careful work." data-jp="分からないことは確認しながら素直に学び、責任を持って丁寧に仕事に取り組みます。">I am ready to learn sincerely, confirm unclear points, and contribute with responsibility and careful work.</p>
+        </div>
+        <div class="actions" style="margin-top:0">
+          <a class="btn primary" href="mailto:sajibh2183@gmail.com"><span class="ico">@</span>sajibh2183@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="tech-card group cursor-default">
-                    <span class="font-mono text-xs text-blue-400 mb-2 block">2025 - 2027</span>
-                    <h3 class="text-xl font-bold text-white mb-1 scramble-text" data-en="Azuma Technical College" data-jp="あずま工科専門学校">Azuma Technical College</h3>
-                    <p class="text-sm text-gray-400" id="edu1-desc">Business Application Course (Expected)</p>
-                </div>
-                <div class="tech-card group cursor-default">
-                    <span class="font-mono text-xs text-gray-500 mb-2 block">2023 - 2025</span>
-                    <h3 class="text-xl font-bold text-white mb-1 scramble-text" data-en="Yokohama Int. Edu. Academy" data-jp="横浜国際教育学院">Yokohama Int. Edu. Academy</h3>
-                    <p class="text-sm text-gray-400" id="edu2-desc">Japanese Language Studies</p>
-                </div>
-            </div>
-        </section>
+  <footer>
+    <div class="wrap foot">
+      <div>© 2026 Sajib Md Riyadh Hasan</div>
+      <div>Designed in Yokohama / SRH_OS_V6</div>
+    </div>
+  </footer>
 
-        <section class="mb-20">
-            <div class="flex items-center gap-4 mb-8">
-                <span class="font-mono text-xs text-gray-500">02</span>
-                <h2 class="text-sm font-mono text-gray-500 uppercase tracking-widest" id="exp-title">Experience</h2>
-                <div class="h-px bg-[#1a1a1a] flex-grow"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="tech-card group cursor-default">
-                    <span class="font-mono text-xs text-green-500 mb-2 block">2023 - Present</span>
-                    <h3 class="text-xl font-bold text-white mb-1 scramble-text" data-en="7-Eleven Yokohama" data-jp="セブン-イレブン 横浜">7-Eleven Yokohama</h3>
-                    <p class="text-sm text-white mb-1" id="exp1-role">Logistics & Operations</p>
-                    <p class="text-xs text-gray-500 font-mono" id="exp1-desc">Managed inventory data integrity & precise sorting.</p>
-                </div>
-                
-                <a href="https://spectre9ull.github.io/nishikabyobakes/" target="_blank" class="tech-card group relative">
-                    <div class="absolute top-4 right-4 text-gray-600 group-hover:text-purple-500 transition-colors">
-                        <i data-lucide="external-link" width="16" height="16"></i>
-                    </div>
-                    <span class="font-mono text-xs text-purple-500 mb-2 block">2025 - Present</span>
-                    <h3 class="text-xl font-bold text-white mb-1 scramble-text" data-en="Nishi Kabbo Bakes" data-jp="Nishi Kabbo Bakes">Nishi Kabbo Bakes</h3>
-                    <p class="text-sm text-white mb-1" id="exp2-role">Digital Branding Lead</p>
-                    <p class="text-xs text-gray-500 font-mono" id="exp2-desc">Orchestrated digital presence & automated workflows.</p>
-                </a>
-            </div>
-        </section>
-
-        <section class="mb-20">
-            <div class="flex items-center gap-4 mb-8">
-                <span class="font-mono text-xs text-gray-500">03</span>
-                <h2 class="text-sm font-mono text-gray-500 uppercase tracking-widest" id="skill-title">Competencies</h2>
-                <div class="h-px bg-[#1a1a1a] flex-grow"></div>
-            </div>
-            
-            <div class="flex flex-wrap gap-3">
-                <div class="px-4 py-2 bg-[#111] border border-[#222] rounded text-xs font-mono text-gray-300">AI Prompting</div>
-                <div class="px-4 py-2 bg-[#111] border border-[#222] rounded text-xs font-mono text-gray-300">Hardware Diagnostics</div>
-                <div class="px-4 py-2 bg-[#111] border border-[#222] rounded text-xs font-mono text-gray-300">Web Operations</div>
-                <div class="px-4 py-2 bg-[#111] border border-[#222] rounded text-xs font-mono text-gray-300">Data Management</div>
-                <div class="px-4 py-2 bg-[#111] border border-[#222] rounded text-xs font-mono text-gray-300">Japanese (N3)</div>
-                <div class="px-4 py-2 bg-[#111] border border-[#222] rounded text-xs font-mono text-gray-300">Photography</div>
-            </div>
-        </section>
-
-        <footer class="mt-32 border-t border-[#1a1a1a] pt-12 flex flex-col md:flex-row justify-between items-start md:items-center pb-12 gap-8">
-            <div class="flex flex-col gap-4">
-                <a href="mailto:sajibh2183@gmail.com" class="text-2xl font-bold hover:text-blue-500 transition">
-                    sajibh2183@gmail.com
-                </a>
-                
-                <a href="https://github.com/spectre9ull" target="_blank" class="flex items-center gap-2 text-xs font-mono text-gray-500 hover:text-white transition">
-                    <i data-lucide="github" width="14" height="14"></i>
-                    github.com/spectre9ull
-                </a>
-            </div>
-
-            <div class="text-right">
-                <p class="text-[10px] font-mono text-gray-600">DESIGNED IN YOKOHAMA</p>
-                <p class="text-[10px] font-mono text-gray-600">© 2026 SAJIB HASAN</p>
-            </div>
-        </footer>
-
-    </main>
-
-    <script>
-        // --- CONTENT DATA ---
-        const content = {
-            en: {
-                status: "Available",
-                bio: "Bridging <strong class='text-white'>Hardware Logic</strong> with <strong class='text-white'>Business Intelligence</strong>. Currently mastering Business Applications at Azuma Technical College.",
-                edu_title: "Education History",
-                edu1_desc: "Business Application Course (Expected)",
-                edu2_desc: "Japanese Language Studies",
-                exp_title: "Experience",
-                exp1_role: "Logistics & Operations",
-                exp1_desc: "Managed inventory data integrity & precise sorting.",
-                exp2_role: "Digital Branding Lead",
-                exp2_desc: "Orchestrated digital presence & automated workflows.",
-                skill_title: "Competencies"
-            },
-            jp: {
-                status: "求職中",
-                bio: "<strong class='text-white'>ハードウェア知識</strong>と<strong class='text-white'>ビジネスインテリジェンス</strong>の融合。現在、あずま工科専門学校でビジネスアプリケーションを専攻中。",
-                edu_title: "学歴",
-                edu1_desc: "ビジネスアプリケーション科 (卒業見込)",
-                edu2_desc: "日本語学科",
-                exp_title: "職歴",
-                exp1_role: "物流・オペレーション業務",
-                exp1_desc: "在庫データの管理と正確な仕分け業務。",
-                exp2_role: "デジタルブランディング責任者",
-                exp2_desc: "オンラインプレゼンス構築と自動化。",
-                skill_title: "スキル・資格"
-            }
-        };
-
-        // --- STABLE HACKER EFFECT ---
-        const charsEn = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        const charsJp = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
-
-        function runScramble(element, finalString, lang) {
-            if (element.dataset.intervalId) {
-                clearInterval(parseInt(element.dataset.intervalId));
-            }
-
-            let iterations = 0;
-            const chars = lang === 'jp' ? charsJp : charsEn;
-            const maxIterations = finalString.length;
-
-            const interval = setInterval(() => {
-                element.innerText = finalString
-                    .split("")
-                    .map((letter, index) => {
-                        if (index < iterations) {
-                            return finalString[index];
-                        }
-                        return chars[Math.floor(Math.random() * chars.length)];
-                    })
-                    .join("");
-                
-                if (iterations >= maxIterations) {
-                    clearInterval(interval);
-                    element.innerText = finalString; // Force correct text
-                }
-                
-                iterations += 1 / 2;
-            }, 30);
-
-            element.dataset.intervalId = interval.toString();
-        }
-
-        // --- LOGIC ---
-        let currentLang = 'en';
-        const browserLang = navigator.language || navigator.userLanguage;
-        if (browserLang.startsWith('ja')) {
-            currentLang = 'jp';
-        }
-
-        function updateUI() {
-            // Scramble Headers
-            document.querySelectorAll('.scramble-text').forEach(el => {
-                const targetText = el.getAttribute(`data-${currentLang}`);
-                runScramble(el, targetText, currentLang);
-            });
-
-            // Instant Text Update
-            document.getElementById('status-text').innerText = content[currentLang].status;
-            document.getElementById('bio-text').innerHTML = content[currentLang].bio;
-            document.getElementById('edu-title').innerText = content[currentLang].edu_title;
-            document.getElementById('edu1-desc').innerText = content[currentLang].edu1_desc;
-            document.getElementById('edu2-desc').innerText = content[currentLang].edu2_desc;
-            document.getElementById('exp-title').innerText = content[currentLang].exp_title;
-            document.getElementById('exp1-role').innerText = content[currentLang].exp1_role;
-            document.getElementById('exp1-desc').innerText = content[currentLang].exp1_desc;
-            document.getElementById('exp2-role').innerText = content[currentLang].exp2_role;
-            document.getElementById('exp2-desc').innerText = content[currentLang].exp2_desc;
-            document.getElementById('skill-title').innerText = content[currentLang].skill_title;
-            document.getElementById('lang-btn').innerText = currentLang === 'en' ? "JPへ切替" : "Switch to EN";
-        }
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'jp' : 'en';
-            updateUI();
-        }
-
-        window.onload = () => {
-            updateUI();
-            
-            // Hover Trigger
-            document.querySelectorAll('.scramble-text').forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    const targetText = el.getAttribute(`data-${currentLang}`);
-                    runScramble(el, targetText, currentLang);
-                });
-            });
-        };
-
-        // Icons
-        lucide.createIcons();
-    </script>
+  <script>
+    const body = document.body;
+    const btn = document.getElementById('langBtn');
+    function setLang(lang){
+      body.setAttribute('data-lang', lang);
+      document.documentElement.lang = lang === 'jp' ? 'ja' : 'en';
+      document.querySelectorAll('[data-en][data-jp]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      btn.textContent = lang === 'en' ? '日本語' : 'ENGLISH';
+    }
+    btn.addEventListener('click', () => {
+      const next = body.getAttribute('data-lang') === 'en' ? 'jp' : 'en';
+      setLang(next);
+    });
+    setLang('en');
+  </script>
 </body>
 </html>
